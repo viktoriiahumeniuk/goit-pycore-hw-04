@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 def total_salary(path):
     """Calculate the total and average salaries from a file."""
     try:
@@ -22,6 +25,7 @@ def total_salary(path):
 
     return 0, 0
 
-total, average = total_salary("salary.txt")
+path = Path(__file__).parent / "salary.txt"
+total, average = total_salary(path)
 
 print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average:g}")
